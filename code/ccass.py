@@ -1,14 +1,4 @@
-from selenium import webdriver
-from selenium.webdriver.firefox.options import Options
-import pandas as pd
-from bs4 import BeautifulSoup as bs
-from selenium.webdriver.support.select import Select
-from selenium.webdriver.common.keys import Keys
-from bs4 import BeautifulSoup as bs
-import pandas as pd
-import os
-import time
-from datetime import datetime
+
 
 
 class ccass:
