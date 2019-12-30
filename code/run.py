@@ -1,9 +1,10 @@
 import scrap
 import pandas as pd
 import datetime
+from google.cloud import storage
 
+client = bigquery.Client.from_service_account_json('secret.json')
 today = str(datetime.datetime.now()+datetime.timedelta(hours = 8)).split(' ')[0]
-
 all_stock_code = list(pd.read_csv('https://storage.googleapis.com/hedgefund/Mainboard%20List.csv').TICKER)
 c = scrap.ccass()
 
@@ -16,4 +17,7 @@ for i in all_stock_code:
     ''
 df = pd.concat(all_tables)
 
-df.to_csv('/home/yinpatt/ccass_raw/daily/main_df/main_df_'+str(today)+'.csv', index = False)
+f = StringIO()
+df.to_csv(f)
+f.seek(0)
+gcs.get_bucket('ccass_raw').blob('daily/main_df/main_df_'+str(today)+'.csv').upload_from_file(f, content_type='text/csv')
