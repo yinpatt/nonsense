@@ -52,7 +52,11 @@ class ccass:
         df['holding'] = df.holding.apply(lambda x: int(x.replace(',','')))
         df['cumul_stake'] = df.stake.cumsum()
         df['lastchange'] = ''
-        df['file_date'] = self.date
+        
+        date = datetime.datetime.now()+ datetime.timedelta(hours=8)
+        date = str(date.date())
+        
+        df['file_date'] = date
         df['taker'] = n
         df['row'] = range(len(df))
         df['row'] = df['row'].astype(float)
