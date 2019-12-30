@@ -2,6 +2,7 @@ import scrap
 import pandas as pd
 import datetime
 from google.cloud import storage
+from io import StringIO
 
 gcs = storage.Client('secret.json')
 today = str(datetime.datetime.now()+datetime.timedelta(hours = 8)).split(' ')[0]
