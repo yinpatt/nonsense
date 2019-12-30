@@ -3,7 +3,7 @@ import pandas as pd
 import datetime
 from google.cloud import storage
 
-client = bigquery.Client.from_service_account_json('secret.json')
+gcs = storage.Client('secret.json')
 today = str(datetime.datetime.now()+datetime.timedelta(hours = 8)).split(' ')[0]
 all_stock_code = list(pd.read_csv('https://storage.googleapis.com/hedgefund/Mainboard%20List.csv').TICKER)
 c = scrap.ccass()
