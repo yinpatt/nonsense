@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup as bs
 import pandas as pd
 import os
 import time
-from datetime import datetime
+import datetime
 
 
 class ccass:
