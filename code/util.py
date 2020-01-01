@@ -25,9 +25,6 @@ def get_table(ytd, td):
     return df
 
 
-os.chdir('/users/patrick/Documents/data')
-
-
 def write_xlsx(ytd, td):
     df_all = get_table(ytd,td)
     df_top = df_all.head(50)
