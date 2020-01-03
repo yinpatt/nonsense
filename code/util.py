@@ -99,7 +99,7 @@ def send_email(td, fromaddr,toaddr, pw):
     msg.attach(MIMEText(body, 'plain')) 
 
     # open the file to be sent 
-    filename = "test.xlsx"
+    filename = "{}.xlsx".format(td)
     attachment = open("{}.xlsx".format(td), "rb") 
 
     # instance of MIMEBase and named as p 
