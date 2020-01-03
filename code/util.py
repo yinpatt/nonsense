@@ -25,7 +25,7 @@ def get_table(ytd, td):
     return df
 
 
-def write_xlsx(df_all):
+def write_xlsx(td, df_all):
     df_top = df_all.head(50)
     df_bottom = df_all.tail(50).sort_values('Stake% Change', ascending = True)
 
