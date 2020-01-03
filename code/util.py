@@ -100,7 +100,7 @@ def send_email(td, pw):
 
     # open the file to be sent 
     filename = "test.xlsx"
-    attachment = open("/Users/patrick/Documents/data/{}.xlsx".format(td), "rb") 
+    attachment = open("{}.xlsx".format(td), "rb") 
 
     # instance of MIMEBase and named as p 
     p = MIMEBase('application', 'octet-stream') 
