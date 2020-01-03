@@ -75,7 +75,7 @@ def write_xlsx(df_all):
     
 
 
-def send_email(td):
+def send_email(td, pw):
 
     fromaddr = "raysquant.operation@gmail.com"
     toaddr = "yinpatt@gmail.com, raysquant.operation@gmail.com"
