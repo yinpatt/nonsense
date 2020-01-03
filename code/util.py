@@ -75,10 +75,10 @@ def write_xlsx(td, df_all):
     
 
 
-def send_email(td, pw):
+def send_email(td, fromaddr,toaddr, pw):
 
-    fromaddr = "raysquant.operation@gmail.com"
-    toaddr = "yinpatt@gmail.com, raysquant.operation@gmail.com"
+    #fromaddr = "raysquant.operation@gmail.com"
+    #toaddr = "yinpatt@gmail.com, raysquant.operation@gmail.com"
 
     # instance of MIMEMultipart 
     msg = MIMEMultipart() 
