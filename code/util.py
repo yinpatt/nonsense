@@ -17,7 +17,7 @@ def get_table(ytd, td):
     df['holding_changes'] = df.holding_y - df.holding_x
     df.stake_changes.sort_values()
     col = ['taker_x','ccass_id_x','name_x','holding_y','holding_changes','stake_y','stake_changes']
-    df = df.sort_values('stake_changes', ascending = False).dropna()[col]
+    df = df[col].sort_values('stake_changes', ascending = False).dropna()
     df.columns = ['Ticker','Participant ID','CCASS Participant','Shareholding','Shareholding Change','Stake%','Stake% Change']
     df['Stake%'] = df['Stake%']/100
     df['Stake% Change'] = df['Stake% Change']/100
@@ -25,8 +25,7 @@ def get_table(ytd, td):
     return df
 
 
-def write_xlsx(ytd, td):
-    df_all = get_table(ytd,td)
+def write_xlsx(df_all):
     df_top = df_all.head(50)
     df_bottom = df_all.tail(50).sort_values('Stake% Change', ascending = True)
 
