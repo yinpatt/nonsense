@@ -9,11 +9,11 @@ import json
 
 
 #Reading config file
-with open('config.json') as json_file:
+with open('/home/yinpatt/nonsense/code/config.json') as json_file:
     config = json.load(json_file)
 
 #defining google bucket, today, stock code, and load the ccass scraper
-gcs = storage.Client('secret.json')
+gcs = storage.Client('/home/yinpatt/nonsense/code/secret.json')
 today = str(datetime.datetime.now()+datetime.timedelta(hours = 8)).split(' ')[0]
 all_stock_code = list(pd.read_csv('https://storage.googleapis.com/hedgefund/Mainboard%20List.csv').TICKER)
 c = scrap.ccass()
